@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<div>
+    <p style="margin-left: 0.2em; font-size: small;">
+        Default template<br/>
+        Application: <span th:text="${appName}">unknown</span>
+        <br/>
+        <span th:text="${exceptionKey}">unknown</span>
+        <br/><br/>
+        Server: <span th:text="${serverName}">unknown</span><br/>
+        <span th:text="${#calendars.format(#calendars.createNow(),'dd.MM.yyyy HH:mm')}"/><br/>
+    </p>
+    <p th:if="${countRepeat != null}">
+        Количество повторов за <span th:text="${timeInterval}">00:00:00</span> - <span th:text="${countRepeat}">0</span>
+    </p>
+    <p style="margin-left: 0.2em; font-size: small;">
+        <span th:text="${msg}"></span>
+        <br/>
+        <span th:text="${errorMsg}"/>
+    </p>
+    <p>
+        <pre style="margin-left: 0.5em; font-size: 10pt; color: navy;" th:utext="${notificationBean}"></pre>
+    </p>
+    <p style="margin-left: 0.5em; font-size: 11pt; color: red;">
+        <th:block th:each="trace:${stackTrace}"><span th:text="${trace}"></span><br/></th:block>
+    </p>
+    <p style="font-family: Arial, Helvetica, sans-serif; font-size: 9pt; color: maroon; ">
+        ______________________________________________________________<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Это письмо сформировано автоматически, не отвечайте на него.
+    </p>
+</div>
+</body>
+</html>
