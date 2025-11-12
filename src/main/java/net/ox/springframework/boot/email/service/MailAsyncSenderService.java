@@ -1,9 +1,9 @@
-package ru.dpd.integration.common.email.service;
+package net.ox.springframework.boot.email.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.mail.javamail.JavaMailSender;
-import ru.dpd.integration.common.email.model.Email;
+import net.ox.springframework.boot.email.model.Email;
 
 import java.util.concurrent.Executors;
 

@@ -1,9 +1,9 @@
-package ru.dpd.integration.common.email.service;
+package net.ox.springframework.boot.email.service;
 
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.mail.javamail.JavaMailSender;
-import ru.dpd.integration.common.email.utils.EnvDeployment;
+import net.ox.springframework.boot.email.utils.EnvDeployment;
 
 import java.util.List;
 

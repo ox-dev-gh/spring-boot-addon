@@ -1,18 +1,19 @@
-package ru.dpd.integration.common.email.service;
+package net.ox.springframework.boot.email.service;
 
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DurationFormatUtils;
+import org.slf4j.event.Level;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.thymeleaf.spring6.SpringTemplateEngine;
+import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
-import ru.dpd.integration.common.email.model.Email;
-import ru.dpd.integration.common.email.model.EmailFromTemplate;
-import ru.dpd.integration.common.email.model.EmailType;
-import ru.dpd.integration.common.email.utils.PkgUtils;
+import net.ox.springframework.boot.email.model.Email;
+import net.ox.springframework.boot.email.model.EmailFromTemplate;
+import net.ox.springframework.boot.email.model.EmailType;
+import net.ox.springframework.boot.email.utils.PkgUtils;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Collections;
@@ -171,12 +172,12 @@ public class SendMailAboutSystemErrorDefault  implements InitializingBean {
                                            String subject,
                                            String text,
                                            Map<String, Object> properties,
-                                           System.Logger.Level _level) {
+                                           Level _level) {
 
         if (throwable == null && text == null) {
             return;
         }
-        System.Logger.Level level = (_level == null) ? System.Logger.Level.ERROR : _level;
+        Level level = (_level == null) ? Level.ERROR : _level;
 
         EmailFromTemplate emailFromTemplate = new EmailFromTemplate(
                 customSpringTemplateEngine != null    ? customSpringTemplateEngine : springTemplateEngine,
@@ -210,7 +211,7 @@ public class SendMailAboutSystemErrorDefault  implements InitializingBean {
                 case INFO:
                     log.info(throwable.getMessage(), throwable);
                     break;
-                case WARNING:
+                case WARN:
                     log.warn(throwable.getMessage(), throwable);
                     break;
                 default:
@@ -222,7 +223,7 @@ public class SendMailAboutSystemErrorDefault  implements InitializingBean {
                 case INFO:
                     log.info(text);
                     break;
-                case WARNING:
+                case WARN:
                     log.warn(text);
                     break;
                 default:

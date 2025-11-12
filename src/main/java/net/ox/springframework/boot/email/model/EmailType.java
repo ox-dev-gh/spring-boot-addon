@@ -1,4 +1,4 @@
-package ru.dpd.integration.common.email.model;
+package net.ox.springframework.boot.email.model;
 
 public enum EmailType {
     HTML,

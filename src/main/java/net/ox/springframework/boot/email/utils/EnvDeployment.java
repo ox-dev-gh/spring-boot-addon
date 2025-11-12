@@ -1,4 +1,4 @@
-package ru.dpd.integration.common.email.utils;
+package net.ox.springframework.boot.email.utils;
 
 import java.util.Arrays;
 import java.util.Optional;

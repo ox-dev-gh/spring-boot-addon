@@ -1,4 +1,4 @@
-package ru.dpd.integration.common.email.model;
+package net.ox.springframework.boot.email.model;
 
 /**
  * Интерфейс Email - описывает сообщение для отправки.

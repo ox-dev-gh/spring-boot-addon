@@ -1,9 +1,9 @@
-package ru.dpd.integration.common.email.model;
+package net.ox.springframework.boot.email.model;
 
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
 import org.thymeleaf.context.Context;
-import org.thymeleaf.spring6.SpringTemplateEngine;
+import org.thymeleaf.spring5.SpringTemplateEngine;
 
 import java.util.HashMap;
 import java.util.Map;

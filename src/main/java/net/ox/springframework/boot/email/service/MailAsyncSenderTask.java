@@ -1,7 +1,7 @@
-package ru.dpd.integration.common.email.service;
+package net.ox.springframework.boot.email.service;
 
 import lombok.extern.slf4j.Slf4j;
-import ru.dpd.integration.common.email.model.Email;
+import net.ox.springframework.boot.email.model.Email;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
